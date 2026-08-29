@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "wetlandwilds:block/cattails_top"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "wetlandwilds:block/duckweed"
+      },
+      {
+        "model": "wetlandwilds:block/duckweed",
+        "y": 90
+      },
+      {
+        "model": "wetlandwilds:block/duckweed",
+        "y": 180
+      },
+      {
+        "model": "wetlandwilds:block/duckweed",
+        "y": 270
+      }
+    ]
+  }
+}

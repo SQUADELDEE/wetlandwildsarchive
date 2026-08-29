@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "wetlandwilds:block/geyser_top",
+    "bottom": "minecraft:block/mud",
+    "side": "minecraft:block/mud"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    { "item": "wetlandwilds:blubberfish_excrement" },
+    { "item": "minecraft:mud" },
+    { "item": "minecraft:mud" },
+    { "item": "minecraft:mud" },
+    { "item": "minecraft:mud" }
+  ],
+  "result": {
+    "id": "minecraft:slime_ball",
+    "count": 2
+  }
+}

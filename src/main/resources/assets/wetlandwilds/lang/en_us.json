@@ -1,0 +1,21 @@
+{
+  "itemGroup.wetlandwilds": "Wetland Wilds",
+  "block.wetlandwilds.example_block": "Example Block",
+  "block.wetlandwilds.duckweed": "Duckweed",
+  "block.wetlandwilds.cattails": "Cattails",
+  "block.wetlandwilds.cattails_top": "Cattails",
+  "block.wetlandwilds.geyser": "Geyser",
+  "item.wetlandwilds.example_item": "Example Item",
+  "entity.wetlandwilds.blubber_fish": "Blubber Fish",
+  "item.wetlandwilds.blubber_fish_spawn_egg": "Blubber Fish Spawn Egg",
+  "item.wetlandwilds.bucket_of_blubberfish": "Bucket of Blubberfish",
+  "item.wetlandwilds.blubberfish_excrement": "Blubberfish Excrement",
+
+  "wetlandwilds.configuration.title": "wetlandwilds Configs",
+  "wetlandwilds.configuration.section.wetlandwilds.common.toml": "wetlandwilds Configs",
+  "wetlandwilds.configuration.section.wetlandwilds.common.toml.title": "wetlandwilds Configs",
+  "wetlandwilds.configuration.items": "Item List",
+  "wetlandwilds.configuration.logDirtBlock": "Log Dirt Block",
+  "wetlandwilds.configuration.magicNumberIntroduction": "Magic Number Text",
+  "wetlandwilds.configuration.magicNumber": "Magic Number"
+}
