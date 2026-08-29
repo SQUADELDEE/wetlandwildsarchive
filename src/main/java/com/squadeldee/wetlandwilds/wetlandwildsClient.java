@@ -3,31 +3,27 @@ package com.squadeldee.wetlandwilds;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
-import net.neoforged.neoforge.client.event.EntityRenderersEvent;
-import net.neoforged.neoforge.client.gui.ConfigurationScreen;
-import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 import com.squadeldee.wetlandwilds.entity.ModEntityTypes;
 import com.squadeldee.wetlandwilds.entity.client.BlubberFishRenderer;
 
-// This class will not load on dedicated servers. Accessing client side code from here is safe.
-@Mod(value = wetlandwilds.MODID, dist = Dist.CLIENT)
-// You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-@EventBusSubscriber(modid = wetlandwilds.MODID, value = Dist.CLIENT)
+// Forge doesn't support NeoForge's separate client-dist @Mod class with its own
+// constructor/ModContainer injection -- client-only setup goes through a plain
+// @Mod.EventBusSubscriber(bus = MOD, value = CLIENT) class instead, the pattern
+// confirmed directly from Forge's own 1.21.1 MDK.
+//
+// One thing dropped in this port: NeoForge's ConfigurationScreen (an auto-generated
+// config GUI from a ModConfigSpec) has no Forge equivalent -- Forge's
+// ConfigScreenHandler expects you to hand-write your own Screen. Since Config.java's
+// values are unused template placeholders, not real mod settings, skipping the GUI
+// screen doesn't lose anything functional; the config file itself still works fine.
+@Mod.EventBusSubscriber(modid = wetlandwilds.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class wetlandwildsClient {
-    public wetlandwildsClient(ModContainer container) {
-        // Allows NeoForge to create a config screen for this mod's configs.
-        // The config screen is accessed by going to the Mods screen > clicking on your mod > clicking on config.
-        // Do not forget to add translations for your config options to the en_us.json file.
-        container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
-    }
-
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {

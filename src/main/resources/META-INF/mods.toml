@@ -1,0 +1,46 @@
+# Forge dialect of mod metadata -- note this uses mandatory=true/false rather than
+# NeoForge's type="required"/"optional" for dependency entries; the two loaders'
+# mods.toml formats differ in that respect even though the file looks similar.
+modLoader="javafml"
+loaderVersion="[0,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="wetlandwilds"
+version="1.0.0"
+displayName="wetlandwilds"
+authors="squadeldee"
+
+description='''A wetlands biome mod: mud-brick ruins, a geothermal geyser, cattails and
+duckweed rooted in the water, and a schooling blubber fish with its own little food chain.
+'''
+
+[[dependencies.wetlandwilds]]
+    modId="forge"
+    mandatory=true
+    versionRange="[52,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.wetlandwilds]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.21.1,1.22)"
+    ordering="NONE"
+    side="BOTH"
+
+# TerraBlender is required for the wetlands biome to be registered into the Overworld
+[[dependencies.wetlandwilds]]
+    modId="terrablender"
+    mandatory=true
+    versionRange="[1.21.1-4.1.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+# GeckoLib powers the animated blubber fish model
+[[dependencies.wetlandwilds]]
+    modId="geckolib"
+    mandatory=true
+    versionRange="[4.0,)"
+    ordering="AFTER"
+    side="BOTH"
